@@ -48,7 +48,7 @@ public class CityServiceTest {
     @Test
     public void getById_404() {
 
-        when(cityRepositoryMock.findById(1000L)).thenReturn(Optional.ofNullable(null));
+        when(cityRepositoryMock.findById(1000L)).thenReturn(Optional.empty());
 
         System.out.println(cityService.getById(1000L));
         assertEquals(false,cityService.getById(1000).isPresent());
